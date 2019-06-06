@@ -6,20 +6,21 @@ package com.zipcodewilmington.assessment1.part3;
 public abstract class Pet implements Animal {
     private String name;
     private int age;
-
+    private PetOwner petOwner;
     /**
      * nullary constructor
      * by default, pet has age of 0; name of "";
      */
     public Pet() {
-
-
+     this.name = "";
+     this.age = 0;
+     this.petOwner = new PetOwner("");
     }
 
     /**
      * @param name name of this pet
      */
-    public Pet(String name) {
+    public Pet(String name ) {
         this.name =name;
 
     }
@@ -46,7 +47,7 @@ public abstract class Pet implements Animal {
      * @return name of this pet
      */
     public String getName() {
-        return getName();
+        return name;
     }
 
     /**
@@ -63,6 +64,8 @@ public abstract class Pet implements Animal {
      */
     public void setOwner(PetOwner newPetOwner) {
 
+        petOwner = newPetOwner;
+        //newPetOwner.addPet(this);
     }
 
     /**
@@ -70,6 +73,6 @@ public abstract class Pet implements Animal {
      */
     public PetOwner getOwner() {
 
-        return null;
+        return petOwner;
     }
 }

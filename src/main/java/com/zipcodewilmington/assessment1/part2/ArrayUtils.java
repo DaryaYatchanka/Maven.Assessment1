@@ -1,5 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import com.sun.org.apache.xpath.internal.operations.String;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -33,15 +36,31 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-       // ArrayList<Integer> result = new ArrayList<>();
+
+        if(objectToRemove instanceof Integer){
+            List<Integer> ints = new ArrayList<>();
+            for (int i = 0; i<objectArray.length; i++ ) {
+                if (!objectArray[i].equals(objectToRemove)) {
+                    ints.add((Integer) objectArray[i]);
+
+                }
+
+            }
+            return ints.toArray(new Integer[ints.size()]);
+
+        }
+        else {
+            List<String> ints = new ArrayList<>();
+            for (int i = 0; i < objectArray.length; i++) {
+                if (!objectArray[i].equals(objectToRemove)) {
+                    ints.add((String) objectArray[i]);
+
+                }
 
 
-                
-
-        //return result.toArray(new Integer[result.size()]);
-        return null;
-
-
+            }
+            return ints.toArray(new String[ints.size()]);
+        }
 
     }
 
@@ -110,11 +129,17 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
+        List<Integer> integ = new ArrayList<>();
+        for (Object s: objectArray ){
+            integ.add((Integer) s);
+
+        }
+        for(Object b: objectArrayToAdd){
+            integ.add((Integer) b);
+        }
 
 
-
-
-        return null;
+        return integ.toArray(new Integer[integ.size()]);
 
     }
 }
