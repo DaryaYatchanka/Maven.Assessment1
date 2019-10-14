@@ -3,7 +3,8 @@ package com.zipcodewilmington.assessment1.part1;
 /**
  * Created by leon on 2/16/18.
  */
-public class IntegerArrayUtils {
+public class
+IntegerArrayUtils {
     /**
      * @param intArray an array of integers
      * @return the sum of `intArray`
@@ -11,7 +12,6 @@ public class IntegerArrayUtils {
     public static Integer getSum(Integer[] intArray) {
         Integer sum = 0;
         for(int i=0; i<= intArray.length;i ++) {
-
 
             sum = sum +i;
         }
@@ -38,16 +38,12 @@ public class IntegerArrayUtils {
      */
     public static Double getAverage(Integer[] intArray) {
         Double sum = 0.0;
-        int count = 0;
         Double aver = 0.0;
         for(int i=0; i<= intArray.length;i ++) {
-
-            count++;
             sum = sum +(double)i;
         }
-        aver = (double)sum/(count-1);
 
-        return aver;
+        return aver = sum/(intArray.length);
 
     }
 }

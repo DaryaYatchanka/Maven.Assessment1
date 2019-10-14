@@ -1,6 +1,5 @@
 package com.zipcodewilmington.assessment1.part2;
 
-import com.sun.org.apache.xpath.internal.operations.String;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
